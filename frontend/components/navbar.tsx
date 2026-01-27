@@ -86,7 +86,7 @@ export function Navbar() {
               <Linkedin className="w-4 h-4" />
             </Link>
             <Link
-              href="https://github.com/joechua"
+              href="https://github.com/wasjoe1"
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 text-muted-foreground hover:text-foreground transition-colors"
@@ -153,7 +153,7 @@ export function Navbar() {
                 <Linkedin className="w-5 h-5" />
               </Link>
               <Link
-                href="https://github.com/joechua"
+                href="https://github.com/wasjoe1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"

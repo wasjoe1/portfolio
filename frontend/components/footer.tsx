@@ -44,7 +44,7 @@ export function Footer() {
               <Linkedin className="w-5 h-5" />
             </Link>
             <Link
-              href="https://github.com/joechua"
+              href="https://github.com/wasjoe1"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
