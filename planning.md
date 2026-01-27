@@ -61,6 +61,9 @@ figma link: https://www.figma.com/design/V8J7u1ZtZarMgHRQdXSzuZ/portfolio?node-i
 I have included the prompt i want you to create the app based on in the pasted-text.txt (its the one above) file atttached. just a reminder that the figma link to create is https://www.figma.com/design/V8J7u1ZtZarMgHRQdXSzuZ/portfolio?node-id=0-1&t=GroqSHmU8EsU9ZOa-1 and if you cant access it, you can refer to the images where i pasted the stuff.
 a little thing to note is that a person visitng the site should be able to keep scrolling from about me, tech arsenal, experience, projects, and finally education. the nav bar just helps the user to jump to that specific section in the app
 
+## prompt to ask chat whether the tech stack first produced by vercel v0 is fine
+lets remove the mdx setup since i dont have a notes page anymore. what is radix-ui? is it commonly used? what about next-themes? class-variance-authority, clsx, tailwind-merge, lucide-react? are all of these other libraries or are they extensions of the current library/ framework? i prefer to use stuff that are optimally essentially so that i can apply these to most frontend projects in the future when building dashboard (i.e. if they are relavant,etc.)
+
 # tech stack
 Frontend (boring, fast, credible)
 - Stack
@@ -143,6 +146,12 @@ backend/
   scripts/
   tests/
 
+# Buying Domain Name
+refered to this youtube vid: https://www.youtube.com/watch?v=1JJrXWQ-7OE
+chose cloudflare as domain name registrar
+bounght joe-chua.com
+
+
 # current todos
 - ~~create mock up app using replit~~
 - ~~export it using app design using html.to.design extension & import it into figma via the figma plugin~~
@@ -150,5 +159,30 @@ backend/
 -  use vercel v0 (vercel's ai UI genereator) => takes in figma design & generate React + next.js
   - https://www.eesel.ai/blog/frontend-ai-tools-developers (look at point 3)
   - vercel v0 figma link is a premium feature
+- get the front end design out first with hard coded data, & host the website => so i have something working
+
+# future features
+- create the backend which replaces the hard coded data
+- toggle between dark/ light mode
 
 => steps to get design to replit follows this: https://html.to.design/blog/from-replit-to-figma/
+
+# to run the pre-made project folder (portfolio-website-build) from vercel v0
+1. npm install
+2. npm run dev
+
+# issue with old node version
+* should not download node globally => dfiferent libs/ frameworks are compatible with different node versions
+1. download/ update nvm (node version manage)
+  what is NVM? => tool used to manage multople active node versions https://utkukaba.medium.com/node-version-manager-nvm-3ea115842466
+2. source ~/.zshrc
+3. nvm install 20   => download node (version 20 in this i.e.)
+4. create .nvmrc => inside the same project folder that contains package.json; in the future can always just call nvm use without remembering which nvm you were using for the specific ndoe project
+5. nvm use  => to switch the node version
+
+* package.json vs package-lock.json
+* package.json - stores metadata (scripts to use, minimal version for dependency, etc.)
+package-lock.json - stores exact versions for dependencies
+=> package.json = what you want
+=> package-lock.json = what you actually got
+* npm installs dependencies from __package-lock.json__, if it exists, else, resolves versions from __package.json__ & creates a new lock file
