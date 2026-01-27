@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface Education {
   institution: string;
   logo: string;
@@ -9,10 +10,10 @@ interface Education {
 const educations: Education[] = [
   {
     institution: "National University of Singapore",
-    logo: "/logos/nus.png",
+    logo: "/logos/nus_horizontal.jpg",
     degree: "B.Comp Computer Science",
     period: "Expected May 2026",
-    achievements: ["Honors with distinction", "Dean's List 2024"],
+    achievements: ["Honors with distinction, Dean's List 2024"],
   },
   {
     institution: "George Washington University",
@@ -38,7 +39,7 @@ export function EducationSection() {
         <p className="text-muted-foreground mb-10 ml-4">Colleges I attended</p>
 
         {/* Education Cards */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
+        <div className="flex flex-col gap-6 max-w-3xl">
           {educations.map((edu, index) => (
             <div
               key={index}
@@ -46,12 +47,15 @@ export function EducationSection() {
             >
               {/* Header with logo and institution */}
               <div className="flex items-center gap-4 mb-4">
-                <div className="bg-muted rounded-lg p-2 w-14 h-14 flex items-center justify-center">
-                  <span className="text-xs font-bold text-foreground">
-                    {edu.institution === "National University of Singapore"
-                      ? "NUS"
-                      : "GW"}
-                  </span>
+                <div className="bg-muted rounded-lg p-2 w-21 h-14 flex items-center justify-center">
+                  {/* School Logo */}
+                  <Image
+                    src={edu.logo}
+                    alt={`${edu.institution} logo`}
+                    width={70}
+                    height={70}
+                    className="object-contain rounded-md"
+                  />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">
                   {edu.institution}

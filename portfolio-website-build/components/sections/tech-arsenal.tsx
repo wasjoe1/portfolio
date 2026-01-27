@@ -1,18 +1,21 @@
 import React from "react"
-const languages = ["Python", "C++", "C", "JavaScript", "Java", "SQL", "R"];
+const languages = ["Python", "JavaScript", "C", "C++", "Java", "SQL", "HTML/ CSS", "R"];
 
 const tools = [
-  "Django",
-  "FastAPI",
-  "React / Vue.js",
-  "Linux / Unix",
-  "GCP(Google Cloud Platform)",
-  "Node.js / Express",
   "Git",
   "Docker",
+  "Django",
+  "Linux / Unix",
+  "Nginx",
+  "FastAPI",
   "ROS",
+  "Node.js",
+  "Express.js",
+  "React",
+  "Vue.js",
   "PostGreSQL",
   "MySQL",
+  "GCP(Google Cloud Platform)",
 ];
 
 function Badge({ children }: { children: React.ReactNode }) {

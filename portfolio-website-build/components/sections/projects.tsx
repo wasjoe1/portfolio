@@ -30,7 +30,7 @@ const projects: Project[] = [
       result:
         "Finalist in the hackathon. Achieved greater transparency in payment processes for consignment transactions.",
     },
-    technologies: ["Node.js", "Express", "Python", "Ethereum", "IoT"],
+    technologies: ["Rasberry pi", "Ethereum", "Node.js", "Express.js", "Python","IoT"],
   },
   {
     title: "Maps Hybrid App",
@@ -44,7 +44,7 @@ const projects: Project[] = [
         "Built with HTML/CSS, JS, MongoDB, Node.js. Used Capacitor by Ionic for cross-platform support. Implemented custom JWT auth with BCrypt.",
       result: "Functional cross-platform mobile app with secure authentication.",
     },
-    technologies: ["React", "MongoDB", "Node.js", "Ionic", "JWT"],
+    technologies: ["HTML", "CSS", "Javascript", "MongoDB", "Node.js", "Capacitor by Ionic", "JWT"],
   },
 ];
 

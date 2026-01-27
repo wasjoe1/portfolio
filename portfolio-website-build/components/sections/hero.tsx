@@ -6,25 +6,99 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const tabs = [
-  {
-    id: "intro",
-    label: "Mini Intro",
-    content: `I'm a final-year Computer Science student at NUS with a passion for backend systems, data engineering, and building scalable infrastructure. I thrive in environments where I can solve complex technical challenges and learn rapidly.`,
-  },
-  {
-    id: "interests",
-    label: "CS Interests",
-    content: `My core interests lie in distributed systems, data pipelines, and quantitative finance infrastructure. I enjoy working on problems involving concurrency, networking protocols, and optimizing system performance.`,
-  },
-  {
-    id: "fun",
-    label: "Fun Facts",
-    content: `My girlfriend is in Chicago, so I've fallen in love with the windy city! I enjoy exploring new food spots, photography, and occasionally getting hammered with friends. Still managed As in all but 1 class during exchange!`,
-  },
-];
+  { id: "intro", label: "Mini Intro" },
+  { id: "interests", label: "CS Interests" },
+  { id: "fun", label: "Fun Facts" },
+] as const;
+
+type TabId = (typeof tabs)[number]["id"];
+
+function MiniIntro() {
+  return (
+    <div className="space-y-4">
+      <div className="space-y-2 text-muted-foreground">
+        <p>Final-year CS @ NUS</p>
+        <p>
+          Deans list, 2× NUS Overseas Colleges, Exchange{" "}
+          <Link
+            href="https://www.gwu.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#C4B27A] hover:underline"
+          >
+            @GWU
+          </Link>
+        </p>
+        <p>
+          Seeking Software Engineering roles starting Summer 2026 (US or
+          Singapore,{" "}
+          <span className="text-primary underline cursor-help">
+            H-1B1 eligible
+          </span>
+          ).
+        </p>
+      </div>
+
+      <p className="text-muted-foreground">
+        My experiences include internships{" "}
+        <Link
+          href="https://www.squarepoint-capital.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          @Squarepoint
+        </Link>
+        ,{" "}
+        <Link
+          href="https://www.augustrobotics.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          @August Robotics
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="https://www.point-star.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          @PointStar
+        </Link>
+        , building cool stuff and learning fast.
+      </p>
+    </div>
+  );
+}
+
+function CSInterests() {
+  return (
+    <p className="text-muted-foreground leading-relaxed">
+      My core interests lie in building reliable large distributed systems, data pipelines, and quantitative finance infrastructure. I enjoy working on problems involving concurrency, networking protocols, and optimizing system performance.
+      <br></br>
+      <br></br>
+      Some books I am currently reading are "Operating Systems: 3 easy pieces", "building data intensive applications" & "Tour of C++"
+    </p>
+  );
+}
+
+function FunFacts() {
+  return (
+    <p className="text-muted-foreground leading-relaxed">
+      Outside of Coding, I enjoy exploring new food spots, staying active (Basketball, Gym & Dance)
+      and travel!
+      <br></br>
+      <br></br>
+      During my semester exchange, I travelled to multiple cities such as Denver, New york and more.
+      The city I fell in love with the most though is none other than the windy city of Chicago! 🌭
+    </p>
+  );
+}
 
 export function HeroSection() {
-  const [activeTab, setActiveTab] = useState("intro");
+  const [activeTab, setActiveTab] = useState<TabId>("intro");
 
   return (
     <section id="about" className="min-h-screen flex items-center pt-20 pb-16">
@@ -47,63 +121,14 @@ export function HeroSection() {
                 @NUS
               </Link>
             </h1>
-
-            <div className="space-y-2 text-muted-foreground">
-              <p>Final-year CS @ NUS</p>
-              <p>
-                {"Deans list, 2 x NUS Overseas Colleges, Exchange "}
-                <Link
-                  href="https://www.gwu.edu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  @GWU
-                </Link>
-              </p>
-              <p>
-                Seeking Software Engineering roles starting Summer 2026 (US or
-                Singapore,{" "}
-                <span className="text-primary underline cursor-help">
-                  H-1B1 eligible
-                </span>
-                ).
-              </p>
+            {/* -------- Tab-controlled content block -------- */}
+            <div key={activeTab} className="space-y-4 animate-in fade-in-0 duration-2000 ease-out">
+              {activeTab === "intro" && <MiniIntro />}
+              {activeTab === "interests" && <CSInterests />}
+              {activeTab === "fun" && <FunFacts />}
             </div>
-
-            <p className="text-muted-foreground">
-              {"My Experiences include internships "}
-              <Link
-                href="https://www.squarepoint-capital.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                @Squarepoint
-              </Link>
-              ,{" "}
-              <Link
-                href="https://www.augustrobotics.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                @August Robotics
-              </Link>
-              {" and "}
-              <Link
-                href="https://www.pointstar.co.id/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                @PointStar
-              </Link>
-              , building cool stuff and learning fast.
-            </p>
-
-            {/* Tab Buttons */}
-            <div className="flex flex-wrap gap-3 pt-4">
+            {/* -------- Tabs -------- */}
+            <div className="flex flex-wrap gap-3 pt-2">
               {tabs.map((tab) => (
                 <Button
                   key={tab.id}
@@ -120,12 +145,6 @@ export function HeroSection() {
               ))}
             </div>
 
-            {/* Tab Content */}
-            <div className="bg-card border border-border rounded-lg p-4 min-h-[100px]">
-              <p className="text-muted-foreground leading-relaxed">
-                {tabs.find((t) => t.id === activeTab)?.content}
-              </p>
-            </div>
           </div>
 
           {/* Right Content - Profile Image */}
@@ -133,7 +152,7 @@ export function HeroSection() {
             <div className="relative">
               <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-border shadow-2xl">
                 <Image
-                  src="/profile.jpg"
+                  src="/logos/profile.jpg"
                   alt="Joe Chua"
                   width={400}
                   height={400}

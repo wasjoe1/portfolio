@@ -5,7 +5,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-16 border-t border-border">
+    <footer className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Thank You Section */}
         <div className="mb-12">
@@ -14,7 +14,7 @@ export function Footer() {
             <h2 className="text-3xl font-bold text-foreground">Thank You!</h2>
           </div>
           <p className="text-muted-foreground ml-4 mb-6">
-            Thanks for reading up till this point!
+            Thanks for reading up till this point! Feel free to contact/ reach out to me :)
           </p>
 
           {/* Social Links */}
@@ -27,7 +27,7 @@ export function Footer() {
               <Mail className="w-5 h-5" />
             </Link>
             <Link
-              href="/resume.pdf"
+              href="/docs/resume.pdf"
               target="_blank"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Resume"

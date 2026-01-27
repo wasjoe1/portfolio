@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, FileText, Linkedin, Github, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,11 +29,15 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="#about" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-sm">
-              <span role="img" aria-label="wave">
-                {"👋"}
-              </span>
-            </div>
+            <Image
+              src="/logos/profile.jpg"
+              alt="Joe Chua"
+              width={32}
+              height={32}
+              className="rounded-full object-cover"
+              // className="object-cover w-full h-full" classes from the other image tag
+              priority
+            />
             <span className="font-semibold text-foreground">Joe Chua</span>
           </Link>
 
@@ -64,7 +69,7 @@ export function Navbar() {
               <Mail className="w-4 h-4" />
             </Link>
             <Link
-              href="/resume.pdf"
+              href="/docs/resume.pdf"
               target="_blank"
               className="p-1.5 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Resume"
@@ -133,7 +138,7 @@ export function Navbar() {
                 <Mail className="w-5 h-5" />
               </Link>
               <Link
-                href="/resume.pdf"
+                href="/docs/resume.pdf"
                 target="_blank"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
