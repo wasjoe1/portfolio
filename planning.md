@@ -186,3 +186,7 @@ package-lock.json - stores exact versions for dependencies
 => package.json = what you want
 => package-lock.json = what you actually got
 * npm installs dependencies from __package-lock.json__, if it exists, else, resolves versions from __package.json__ & creates a new lock file
+
+# multiple .gitignore files in 1 repo
+parent .gitignore applies to all subdirectories (i.e. inside this /portfolio)
+child .gitignores adds extra rules for its OWN directories (i.e. inside /portfolio/frontend)
