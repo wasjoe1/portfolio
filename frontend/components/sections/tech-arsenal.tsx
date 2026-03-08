@@ -1,5 +1,5 @@
 import React from "react"
-const languages = ["Python", "JavaScript", "C", "C++", "Java", "SQL", "HTML/ CSS", "R"];
+const languages = ["Python", "C++", "C", "Java", "Go", "SQL", "R", "JavaScript", "HTML/ CSS"];
 
 const tools = [
   "Git",

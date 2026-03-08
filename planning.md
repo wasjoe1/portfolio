@@ -1,8 +1,21 @@
-# content
-“Open to US roles (Chicago / NYC)”
-“Enjoys exploring Chicago neighborhoods, architecture, and food”
+# Website Planning
+This markdown file is used to note down anything i brainstormed
+or my approach to creating a part of my portfolio website
 
-# prompt to build my 
+Below are the main topics:
+1. prompts to build my portfolio website
+2. tech stack
+3. folder structure
+4. Buying Domain Name
+5. current todos
+6. future features
+7. to run the pre-made project folder (portfolio-website-build) from vercel v0
+8. to make & push changes
+9. issue with old node version
+10. multiple .gitignore files in 1 repo
+
+# -------------------------------------------------------------------------------------------------
+# prompts to build my portfolio website
 
 ## prompt used to build the initial replit design
 i am thinking of creating a portfolio website so that i can fill in website url in applications and hopefully catch the attention of recruiters. since the firms i am applying for are mostly quant & big tech, i want it to be relevant to them and hence the tech stack should also be relevant. considering the only every full stack role i will consider is in quant (i usually like backend, data eng, techops etc. roles) hence i was considering something closer to their stack this is my linkedin for more info: https://www.linkedin.com/in/joe-chua/ (i also attached my resume here) i was thinking to have an aboutme section(covering experiences, languages, technologies & frameworks), github link, linkedin, email, resume attached, insta? fun fact?(as my girl friend is in chicago i want to apply for roles in the US, and state things i enjoy in chicago), projects page with tabs that have project description, challenges(using STAR method), github link, pictures/ videos (optional) also i saw this persons portfolio website which include notes on CS topic
@@ -64,6 +77,7 @@ a little thing to note is that a person visitng the site should be able to keep 
 ## prompt to ask chat whether the tech stack first produced by vercel v0 is fine
 lets remove the mdx setup since i dont have a notes page anymore. what is radix-ui? is it commonly used? what about next-themes? class-variance-authority, clsx, tailwind-merge, lucide-react? are all of these other libraries or are they extensions of the current library/ framework? i prefer to use stuff that are optimally essentially so that i can apply these to most frontend projects in the future when building dashboard (i.e. if they are relavant,etc.)
 
+# -------------------------------------------------------------------------------------------------
 # tech stack
 Frontend (boring, fast, credible)
 - Stack
@@ -113,6 +127,7 @@ Infra / deployment
     - /health endpoint => checks if service is okay (returns 200 OK) i.e. is FastAPI running
     - basic metrics endpoint => expose numbers abount the backend's behaviour over time (# of reqs per time, latency of reqs, # of errors?)
 
+# -------------------------------------------------------------------------------------------------
 # folder structure
 frontend/
   app/
@@ -146,12 +161,13 @@ backend/
   scripts/
   tests/
 
+# -------------------------------------------------------------------------------------------------
 # Buying Domain Name
 refered to this youtube vid: https://www.youtube.com/watch?v=1JJrXWQ-7OE
 chose cloudflare as domain name registrar
 bounght joe-chua.com
 
-
+# -------------------------------------------------------------------------------------------------
 # current todos
 - ~~create mock up app using replit~~
 - ~~export it using app design using html.to.design extension & import it into figma via the figma plugin~~
@@ -161,16 +177,36 @@ bounght joe-chua.com
   - vercel v0 figma link is a premium feature
 - get the front end design out first with hard coded data, & host the website => so i have something working
 
+# -------------------------------------------------------------------------------------------------
 # future features
 - create the backend which replaces the hard coded data
 - toggle between dark/ light mode
 
 => steps to get design to replit follows this: https://html.to.design/blog/from-replit-to-figma/
 
+# -------------------------------------------------------------------------------------------------
 # to run the pre-made project folder (portfolio-website-build) from vercel v0
 1. npm install
 2. npm run dev
 
+# -------------------------------------------------------------------------------------------------
+# to make & push changes
+
+## making the changes
+1. edit src code
+2. commit & push changes
+3. check website to see if its updated
+
+## tri-aging if change not reflected
+1. go to vercel.com, under my portfolio project (https://vercel.com/joechua-5488s-projects/portfolio)
+2. click `settings` > `Git`
+3. check if `wasjoe1/portfolio` is connected as the git repository
+4. check the deployments tab `Deployments` => see if the latest commit was deployed
+
+* a note that i'm using cloudflare as my dns provider
+* but the site is hosted at vercel => any changes 
+
+# -------------------------------------------------------------------------------------------------
 # issue with old node version
 * should not download node globally => dfiferent libs/ frameworks are compatible with different node versions
 1. download/ update nvm (node version manage)
@@ -187,6 +223,7 @@ package-lock.json - stores exact versions for dependencies
 => package-lock.json = what you actually got
 * npm installs dependencies from __package-lock.json__, if it exists, else, resolves versions from __package.json__ & creates a new lock file
 
+# -------------------------------------------------------------------------------------------------
 # multiple .gitignore files in 1 repo
 parent .gitignore applies to all subdirectories (i.e. inside this /portfolio)
 child .gitignores adds extra rules for its OWN directories (i.e. inside /portfolio/frontend)
